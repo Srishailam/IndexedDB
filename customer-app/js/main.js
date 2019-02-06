@@ -72,7 +72,7 @@ function removeCustomer(){
     var transaction = db.transaction(['customers'],'readwrite');
     var store = transaction.objectStore('customers');
     var request = store.delete(id);
-    
+    console.log(request, store);
     request.onsuccess = function(){
         console.log('customer'+id+'deleted');
         $('#customer_'+id).remove();
